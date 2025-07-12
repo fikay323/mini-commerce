@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Classic White T-Shirt",
+    "slug": "classic-white-tshirt",
+    "price": 29.99,
+    "image": "https://via.placeholder.com/300x300?text=White+T-Shirt",
+    "description": "Soft cotton, relaxed fit. A must-have in every wardrobe."
+  },
+  {
+    "id": 2,
+    "name": "Denim Jeans",
+    "slug": "denim-jeans",
+    "price": 59.99,
+    "image": "https://via.placeholder.com/300x300?text=Denim+Jeans",
+    "description": "Classic straight-leg denim with a modern twist."
+  },
+  {
+    "id": 3,
+    "name": "Leather Sneakers",
+    "slug": "leather-sneakers",
+    "price": 89.99,
+    "image": "https://via.placeholder.com/300x300?text=Sneakers",
+    "description": "Premium leather sneakers for everyday comfort."
+  },
+  {
+    "id": 4,
+    "name": "Wool Beanie",
+    "slug": "wool-beanie",
+    "price": 19.99,
+    "image": "https://via.placeholder.com/300x300?text=Beanie",
+    "description": "Stay warm and stylish with this cozy wool beanie."
+  },
+  {
+    "id": 5,
+    "name": "Canvas Backpack",
+    "slug": "canvas-backpack",
+    "price": 49.99,
+    "image": "https://via.placeholder.com/300x300?text=Backpack",
+    "description": "Durable and spacious for school, travel, or work."
+  },
+  {
+    "id": 6,
+    "name": "Smartwatch",
+    "slug": "smartwatch",
+    "price": 129.99,
+    "image": "https://via.placeholder.com/300x300?text=Smartwatch",
+    "description": "Track your fitness and notifications with ease."
+  },
+  {
+    "id": 7,
+    "name": "Bluetooth Headphones",
+    "slug": "bluetooth-headphones",
+    "price": 79.99,
+    "image": "https://via.placeholder.com/300x300?text=Headphones",
+    "description": "Wireless freedom with premium sound quality."
+  },
+  {
+    "id": 8,
+    "name": "Sunglasses",
+    "slug": "sunglasses",
+    "price": 39.99,
+    "image": "https://via.placeholder.com/300x300?text=Sunglasses",
+    "description": "UV-protected lenses with a modern frame design."
+  }
+]
