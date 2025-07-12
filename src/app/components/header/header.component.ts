@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { DarkModeService } from '../../services/dark-mode.service';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +10,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  darkMode = inject(DarkModeService);
 
 }

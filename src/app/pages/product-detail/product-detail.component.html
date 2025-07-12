@@ -14,11 +14,11 @@
             </button>
           } @else {
             <div class="flex items-center gap-4">
-              <button (click)="decrease(product.id)" class="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">
+              <button (click)="decrease(product.id)" class="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded hover:bg-gray-300">
                 -
               </button>
               <span class="font-medium">{{ getCartItem(product.id)?.quantity }}</span>
-              <button (click)="increase(product)" class="bg-gray-200 px-3 py-1 rounded hover:bg-gray-300">
+              <button (click)="increase(product)" class="bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded hover:bg-gray-300">
                 +
               </button>
             </div>
