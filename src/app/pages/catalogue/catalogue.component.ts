@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-catalogue',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './catalogue.component.scss'
 })
 export class CatalogueComponent {
+  private readonly productService = inject(ProductService);
 
 }
