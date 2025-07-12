@@ -10,7 +10,7 @@ import { ToastService } from '../../services/toast.service';
   standalone: true,
   imports: [],
   templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.scss'
+  styleUrl: './product-detail.component.scss',
 })
 export class ProductDetailComponent implements OnInit {
   private readonly router = inject(Router);
@@ -38,4 +38,23 @@ export class ProductDetailComponent implements OnInit {
     this.toastService.show('Added to cart', 'success');
   }
 
+  getCartItem(productId: number) {
+    return this.cartService.items().find((i) => i.id === productId);
+  }
+
+  increase(product: Product) {
+    this.cartService.add(product);
+    this.toastService.show('Quantity increased', 'info');
+  }
+
+  decrease(productId: number) {
+    const item = this.getCartItem(productId);
+    if (item && item.quantity > 1) {
+      this.cartService.updateQuantity(productId, item.quantity - 1);
+      this.toastService.show('Quantity decreased', 'info');
+    } else {
+      this.cartService.remove(productId);
+      this.toastService.show('Item removed from cart', 'error');
+    }
+  }
 }
