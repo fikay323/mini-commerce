@@ -19,7 +19,7 @@ A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, an
 
 ## 🧱 Tech Stack
 
-- **Angular 17** (standalone components, strict mode)
+- **Angular 18** (standalone components, strict mode)
 - **RxJS + Signals** for reactive state
 - **Tailwind CSS v4** with dark mode
 - **localStorage** for data + cart persistence
@@ -63,17 +63,15 @@ A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, an
 - Graceful handling of invalid product slugs
 
 ---
+### 🚀 SEO Strategy & Performance Tweaks
 
-## 🚀 SEO & Performance (Bonus)
-
-- `ngOptimizedImage` for images
-- Lazy-loaded components via routes
-- Meta tags injection ready
-- Lighthouse-friendly structure
+- Meta tags & Open Graph injected via Angular's `Meta` & `Title` services.
+- Structured data (Schema.org Product) included on product pages.
+- `ChangeDetectionStrategy.OnPush` applied to reduce DOM checks.
 
 ---
 
-## 🧪 Testing (Minimum Requirement)
+## 🧪 Testing
 
 - ✅ `CartService` unit test using Karma
 - Wrote unit tests for other components and services
