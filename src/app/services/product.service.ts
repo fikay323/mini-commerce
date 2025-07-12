@@ -1,7 +1,8 @@
-import { computed, Injectable, OnDestroy, signal } from '@angular/core';
+import { computed, inject, Injectable, OnDestroy, signal } from '@angular/core';
 import { Product } from '../models/product.model';
 import { HttpClient } from '@angular/common/http';
-import { Subject, take, tap } from 'rxjs';
+import { catchError, of, Subject, take, tap } from 'rxjs';
+import { ToastService } from './toast.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,12 @@ export class ProductService implements OnDestroy {
   private readonly _products = signal<Product[]>([]);
   private readonly destroy$ = new Subject<void>();
 
+  private readonly http = inject(HttpClient);
+  private readonly toastService = inject(ToastService);
+
   products = computed(() => this._products());
 
-  constructor(private readonly http: HttpClient) { 
+  constructor() { 
     const cached = localStorage.getItem(this.PRODUCTS_KEY);
     if(cached) {
       this._products.set(JSON.parse(cached));
@@ -34,6 +38,10 @@ export class ProductService implements OnDestroy {
         tap(products => {
           this._products.set(products);
           localStorage.setItem(this.PRODUCTS_KEY, JSON.stringify(products));
+        }),
+        catchError(err => {
+          this.toastService.show("Products could not be fetched", 'info')
+          return of(null);
         })
       )
       .subscribe();

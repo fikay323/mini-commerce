@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
+import { ToastService } from '../../services/toast.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,6 +17,7 @@ export class ProductDetailComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly productService = inject(ProductService);
   private readonly cartService = inject(CartService);
+  private readonly toastService = inject(ToastService);
 
   product?: Product;
 
@@ -33,6 +35,7 @@ export class ProductDetailComponent implements OnInit {
 
   addToCart(product: Product) {
     this.cartService.add(product);
+    this.toastService.show('Added to cart', 'success');
   }
 
 }
