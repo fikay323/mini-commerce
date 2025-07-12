@@ -1,27 +1,97 @@
-# MiniCommerce
+# 🛒 Mini-Commerce – Angular Frontend Assessment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, and Tailwind CSS. Visitors can browse products, view details, manage a cart, and simulate checkout — with full local persistence and offline support.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📦 Features
 
-## Code scaffolding
+- 🛍 Product catalogue with live search and price filtering
+- 📄 Product detail page with quantity control
+- 🛒 Cart management (add, update, remove)
+- ✅ Mock checkout flow with order summary + success screen
+- 🌙 Dark mode toggle with persistent theme
+- 💾 State persisted using `localStorage`
+- ⚡ Instant feedback with toast notifications
+- 📱 Responsive, accessible, and modern UI
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🧱 Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Angular 17** (standalone components, strict mode)
+- **RxJS + Signals** for reactive state
+- **Tailwind CSS v4** with dark mode
+- **localStorage** for data + cart persistence
+- **TypeScript strict** with no `any`
+- **ToastService**, **DarkModeService**, **CartService**
+- Optional: `computed()`, `signal()`, `ViewChild`, `fromEvent`, `debounceTime`
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📐 Design Approach
 
-## Running end-to-end tests
+- **Responsive first** with grid/flex layouts
+- **Semantic HTML** for accessibility
+- **Utility-first styling** via Tailwind + custom SCSS tokens
+- **Dark mode** via class strategy on `<html>`
+- **Modular routing**: `/`, `/product/:slug`, `/cart`, `/checkout`, `/success`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🔍 Search & Filters
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Live search with debounced input (`300ms`)
+- Price range filters using signals
+- Future-ready structure for category/tags/sort filters
+
+---
+
+## ⚙️ Developer Experience
+
+- ✅ `strict: true` in `tsconfig.json`
+- ✅ ESLint + Prettier formatting
+- ✅ Zero `any`s
+- ✅ Minimal, readable state logic
+- ✅ Incremental, meaningful commit history
+
+---
+
+## ⚠️ Error Handling
+
+- Global error fallbacks (404/redirects)
+- Toasts for user actions: Add/Remove/Checkout
+- Graceful handling of invalid product slugs
+
+---
+
+## 🚀 SEO & Performance (Bonus)
+
+- `ngOptimizedImage` for images
+- Lazy-loaded components via routes
+- Meta tags injection ready
+- Lighthouse-friendly structure
+
+---
+
+## 🧪 Testing (Minimum Requirement)
+
+- ✅ `CartService` unit test using Jasmine/Karma
+- Optionally test toast or product service
+
+---
+
+## 🔗 Live Demo
+
+🌍 [https://mini-commerce-psi.vercel.app/](https://mini-commerce-psi.vercel.app/)  
+🔗 Hosted via Vercel
+
+---
+
+## 📁 Installation & Dev
+
+```bash
+git clone https://github.com/fikay323/mini-commerce.git
+cd mini-commerce
+npm install
+ng serve
