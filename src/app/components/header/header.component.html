@@ -1,0 +1,10 @@
+<header class="bg-white shadow sticky top-0 z-50">
+  <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a routerLink="/" class="text-xl font-bold text-primary">Mini-Commerce</a>
+    <ul class="flex items-center gap-4 text-sm font-medium">
+      <li><a routerLink="/" routerLinkActive="text-blue-600" class="hover:text-blue-600 transition" [routerLinkActiveOptions]="{exact: true}">Catalogue</a></li>
+      <li><a routerLink="/cart" routerLinkActive="text-blue-600" class="hover:text-blue-600 transition">Cart</a></li>
+      <li><a routerLink="/checkout" routerLinkActive="text-blue-600" class="hover:text-blue-600 transition">Checkout</a></li>
+    </ul>
+  </nav>
+</header>
