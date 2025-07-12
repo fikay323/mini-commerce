@@ -1,6 +1,6 @@
 # 🛒 Mini-Commerce – Angular Frontend Assessment
 
-A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, and Tailwind CSS. Visitors can browse products, view details, manage a cart, and simulate checkout — with full local persistence and offline support.
+A lightweight, mobile-first e-commerce prototype built with Angular 18, RxJS, and Tailwind CSS. Visitors can browse products, view details, manage a cart, and simulate checkout — with full local persistence and offline support.
 
 ---
 
@@ -25,7 +25,6 @@ A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, an
 - **localStorage** for data + cart persistence
 - **TypeScript strict** with no `any`
 - **ToastService**, **DarkModeService**, **CartService**
-- Optional: `computed()`, `signal()`, `ViewChild`, `fromEvent`, `debounceTime`
 
 ---
 
