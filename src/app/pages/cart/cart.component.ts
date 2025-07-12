@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { CartItem, CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -8,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent {
+  
+  private readonly cartService = inject(CartService);
 
+  items = this.cartService.items;
+  total = this.cartService.total;
+
+  updateQty(item: CartItem, event?: Event) {
+    const qty = +(event?.target as HTMLInputElement)?.value;
+    if(!qty) return;
+    const quantity = Math.max(1, qty);
+    this.cartService.updateQuantity(item.id, quantity);
+  }
+
+  remove(id: number) {
+    this.cartService.remove(id);
+  }
 }
