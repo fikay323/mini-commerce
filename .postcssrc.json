@@ -3,8 +3,7 @@
     "@tailwindcss/postcss": {
       "content": [
         "./src/**/*.{html,ts}"
-      ],
-      "darkMode": "class"
+      ]
     },
     "autoprefixer": {}
   }
