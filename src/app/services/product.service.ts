@@ -1,4 +1,4 @@
-import { Injectable, OnDestroy, signal } from '@angular/core';
+import { computed, Injectable, OnDestroy, signal } from '@angular/core';
 import { Product } from '../models/product.model';
 import { HttpClient } from '@angular/common/http';
 import { Subject, take, tap } from 'rxjs';
@@ -10,6 +10,8 @@ export class ProductService implements OnDestroy {
   private readonly PRODUCTS_KEY = 'mini-products';
   private readonly _products = signal<Product[]>([]);
   private readonly destroy$ = new Subject<void>();
+
+  products = computed(() => this._products());
 
   constructor(private readonly http: HttpClient) { 
     const cached = localStorage.getItem(this.PRODUCTS_KEY);
@@ -35,5 +37,9 @@ export class ProductService implements OnDestroy {
         })
       )
       .subscribe();
+  }
+
+  getProductBySlug(slug: string): Product | undefined {
+    return this._products().find(p => p.slug === slug);
   }
 }
