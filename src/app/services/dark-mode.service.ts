@@ -18,7 +18,7 @@ export class DarkModeService {
 
   toggleTheme(): void {
     this.isDarkMode.update(value => !value);
-    let theme: string = this.isDarkMode() ? 'dark' : 'light';
+    const theme: string = this.isDarkMode() ? 'dark' : 'light';
     localStorage['theme'] = theme;
   }
 }

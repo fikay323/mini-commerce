@@ -39,8 +39,8 @@ export class ProductService implements OnDestroy {
           this._products.set(products);
           localStorage.setItem(this.PRODUCTS_KEY, JSON.stringify(products));
         }),
-        catchError(err => {
-          this.toastService.show("Products could not be fetched", 'info')
+        catchError(() => {
+          this.toastService.show("Products could not be fetched", 'error')
           return of(null);
         })
       )

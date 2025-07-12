@@ -41,9 +41,8 @@ A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, an
 
 ## 🔍 Search & Filters
 
-- Live search with debounced input (`300ms`)
+- Live search with debounced input (`1000ms`)
 - Price range filters using signals
-- Future-ready structure for category/tags/sort filters
 
 ---
 
@@ -76,8 +75,8 @@ A lightweight, mobile-first e-commerce prototype built with Angular 17, RxJS, an
 
 ## 🧪 Testing (Minimum Requirement)
 
-- ✅ `CartService` unit test using Jasmine/Karma
-- Optionally test toast or product service
+- ✅ `CartService` unit test using Karma
+- Wrote unit tests for other components and services
 
 ---
 

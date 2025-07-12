@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -8,11 +8,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './success.component.html',
   styleUrl: './success.component.scss'
 })
-export class SuccessComponent {
+export class SuccessComponent implements OnInit {
   orderId = '';
 
   ngOnInit(): void {
-    this.orderId = localStorage.getItem('lastOrderId') ?? '';
+    this.orderId = localStorage.getItem('lastOrderId') || '';
   }
 
 }
