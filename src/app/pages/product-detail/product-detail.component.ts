@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
@@ -13,6 +13,7 @@ import { DOCUMENT } from '@angular/common';
   imports: [],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductDetailComponent implements OnInit {
   private readonly meta = inject(Meta);

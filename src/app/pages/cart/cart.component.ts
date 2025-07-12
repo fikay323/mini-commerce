@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CartItem, CartService } from '../../services/cart.service';
 import { RouterLink } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
@@ -9,6 +9,7 @@ import { Meta, Title } from '@angular/platform-browser';
   imports: [RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CartComponent implements OnInit {
   private readonly meta = inject(Meta);

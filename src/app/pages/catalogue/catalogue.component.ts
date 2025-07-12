@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   computed,
   ElementRef,
@@ -20,6 +21,7 @@ import { Meta, Title } from '@angular/platform-browser';
   imports: [RouterLink],
   templateUrl: './catalogue.component.html',
   styleUrl: './catalogue.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CatalogueComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('searchInput', { static: true }) searchInput!: ElementRef;

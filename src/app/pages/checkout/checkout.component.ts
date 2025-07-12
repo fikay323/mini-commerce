@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { Meta, Title } from '@angular/platform-browser';
@@ -8,7 +8,8 @@ import { Meta, Title } from '@angular/platform-browser';
   standalone: true,
   imports: [],
   templateUrl: './checkout.component.html',
-  styleUrl: './checkout.component.scss'
+  styleUrl: './checkout.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutComponent implements OnInit {
   private readonly meta = inject(Meta);
